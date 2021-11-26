@@ -10,17 +10,16 @@
 
 </head>
 <body>
-    <article>
-        <h1><a href="/posts/my-first-post">My First Post</a></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci in natus quasi repellat totam vel voluptas. Commodi culpa, dolorum enim esse expedita explicabo id illum inventore ipsam iusto libero molestias neque nesciunt obcaecati placeat quibusdam quidem sunt tempora ullam, veritatis? Accusamus ad adipisci assumenda beatae corporis cumque doloremque eligendi esse fugit hic illum inventore ipsam itaque iusto libero magnam minima nemo non porro praesentium, quis quisquam quod reiciendis repellat, repellendus saepe sequi tempora temporibus tenetur, veniam. Assumenda eum ipsa pariatur quas repellat reprehenderit voluptatibus! Aliquid asperiores dolore dolorem eius esse, et facilis hic maiores porro, possimus quasi tempora veritatis?</p>
-    </article>
-    <article>
-        <h1><a href="/posts/my-second-post">My Second Post</a></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci in natus quasi repellat totam vel voluptas. Commodi culpa, dolorum enim esse expedita explicabo id illum inventore ipsam iusto libero molestias neque nesciunt obcaecati placeat quibusdam quidem sunt tempora ullam, veritatis? Accusamus ad adipisci assumenda beatae corporis cumque doloremque eligendi esse fugit hic illum inventore ipsam itaque iusto libero magnam minima nemo non porro praesentium, quis quisquam quod reiciendis repellat, repellendus saepe sequi tempora temporibus tenetur, veniam. Assumenda eum ipsa pariatur quas repellat reprehenderit voluptatibus! Aliquid asperiores dolore dolorem eius esse, et facilis hic maiores porro, possimus quasi tempora veritatis?</p>
-    </article>
-    <article>
-        <h1><a href="/posts/my-third-post">My Third Post</a></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci in natus quasi repellat totam vel voluptas. Commodi culpa, dolorum enim esse expedita explicabo id illum inventore ipsam iusto libero molestias neque nesciunt obcaecati placeat quibusdam quidem sunt tempora ullam, veritatis? Accusamus ad adipisci assumenda beatae corporis cumque doloremque eligendi esse fugit hic illum inventore ipsam itaque iusto libero magnam minima nemo non porro praesentium, quis quisquam quod reiciendis repellat, repellendus saepe sequi tempora temporibus tenetur, veniam. Assumenda eum ipsa pariatur quas repellat reprehenderit voluptatibus! Aliquid asperiores dolore dolorem eius esse, et facilis hic maiores porro, possimus quasi tempora veritatis?</p>
-    </article>
+    <?php foreach ($posts as $post) : ?>
+        <article>
+            <a href="/posts/<?= $post->slug; ?>">
+                <h1><?= $post->title; ?></h1>
+            </a>
+
+            <div>
+                <?= $post->excerpt; ?>
+            </div>
+        </article>
+    <?php endforeach; ?>
 </body>
 </html>
